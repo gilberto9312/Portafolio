@@ -1,0 +1,7 @@
+CREATE EXTENSION "uuid-ossp";
+
+CREATE TABLE datos_uuid_auto (
+ id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+ nombre character varying  ); 
+ 
+INSERT INTO datos_uuid_auto (nombre) VALUES ('Automatico') returning id ;
